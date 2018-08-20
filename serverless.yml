@@ -1,15 +1,16 @@
 service:
     name: hello-world
     config:
-      accountId: 5ea9ff246c8fd83268943de928d5109a 
-      zoneId: 66de06a610e659edd89a6de59df291d2
+      accountId: accid 
+      zoneId: zoneid
       scripts:
-        one:
+        hello:
           routes:
-            - nirvik.me/good/*
-        two:
+            - '*example.com/hello*'
+        goodbye:
           routes:
-            - nirvik.me/boy/*
+            - '*example.com/goodbye*'
+
 
 provider:
   name: cloudflare
@@ -19,31 +20,9 @@ plugins:
 
 functions:
   helloWorld:
-    script: one
-    fn: handler.helloCloudflarian
-    id: helloCloudflarian
-    name: say hello
-    description: Please say hello
-    schema:
-      type: object
-      properties:
-    values:
-    events:
-      - http:
-          query:
-            bar: hello
+    script: hello
+    handler: helloworld
 
   getBTC:
-    script: two
-    fn: handler.bitcoin
-    id: bitcoin
-    name: getBTC
-    description: get bitcoin prices
-    schema:
-      type: object
-      properties:
-    values:
-    events:
-      - http:
-          query:
-            bar: btc
+    script: goodbye
+    handler: goodbyeworld
