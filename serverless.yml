@@ -1,15 +1,15 @@
 service:
     name: hello-world
     config:
-      accountId: e04d3d27a6829775c8ef937145d7f3ec 
-      zoneId: d0ff429e46e8b24ef2b1ae9ba592067f
+      accountId: accid 
+      zoneId: zoneid
       scripts:
         hello:
           routes:
-            - '*averyharnish.com/hello*'
+            - '*example.com/hello*'
         goodbye:
           routes:
-            - '*averyharnish.com/goodbye*'
+            - '*example.com/goodbye*'
 
 
 provider:
