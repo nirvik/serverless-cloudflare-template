@@ -1,16 +1,15 @@
 service:
     name: hello-world
     config:
-      accountId: accid 
-      zoneId: zoneid
+      accountId: abcdefghijklmnopqrstuvwxyz123456
+      zoneId: abcdefghijklmnopqrstuvwxyz123456
       scripts:
-        hello:
+        helloworld:
           routes:
-            - '*example.com/hello*'
-        goodbye:
+            - example.com/hello/*
+        goodbyeworld:
           routes:
-            - '*example.com/goodbye*'
-
+            - example.com/goodbye/*
 
 provider:
   name: cloudflare
@@ -20,9 +19,9 @@ plugins:
 
 functions:
   helloWorld:
-    script: hello
-    handler: helloworld
+    script: helloworld
+    handler: helloWorld
 
-  getBTC:
-    script: goodbye
-    handler: goodbyeworld
+  goodbyeWorld:
+    script: goodbyeworld
+    handler: goodbyeWorld
