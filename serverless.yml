@@ -1,16 +1,15 @@
 service:
     name: hello-world
     config:
-      accountId: accid 
-      zoneId: zoneid
-      scripts:
+      accountId: CLOUDFLARE_ACCOUNT_ID 
+      zoneId: CLOUDFLARE_ZONE_ID 
+      workers:
         hello:
           routes:
-            - 'example.com/hello*'
-        goodbye:
+            - example.com/hello/*
+        foo_script:
           routes:
-            - 'example.com/goodbye*'
-
+            - example.com/foo/*
 
 provider:
   name: cloudflare
@@ -20,9 +19,9 @@ plugins:
 
 functions:
   helloWorld:
-    script: hello
-    handler: helloWorld
+    worker: hello
+    script: helloWorld
 
-  bye:
-    script: goodbye
-    handler: goodByeWorld
+  foo:
+    worker: foo_script
+    script: bar
