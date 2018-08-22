@@ -2,11 +2,12 @@ service:
     name: hello-world
     config:
       accountId: accid 
-      zoneId: zoneid
-      routes:
-        - 'example.com/hello*'
-        - 'example.com/world*'
-
+      zoneId: zoneid 
+      scripts:
+        helloworld:
+          routes:
+            - example.com/*
+            - example.com/hi/*
 
 provider:
   name: cloudflare
@@ -16,4 +17,5 @@ plugins:
 
 functions:
   helloWorld:
+    script: helloworld
     handler: helloWorld
