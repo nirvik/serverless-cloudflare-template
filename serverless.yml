@@ -3,13 +3,9 @@ service:
     config:
       accountId: accid 
       zoneId: zoneid
-      scripts:
-        hello:
-          routes:
-            - 'example.com/hello*'
-        goodbye:
-          routes:
-            - 'example.com/goodbye*'
+      routes:
+        - 'example.com/hello*'
+        - 'example.com/world*'
 
 
 provider:
@@ -20,9 +16,4 @@ plugins:
 
 functions:
   helloWorld:
-    script: hello
     handler: helloWorld
-
-  bye:
-    script: goodbye
-    handler: goodByeWorld
