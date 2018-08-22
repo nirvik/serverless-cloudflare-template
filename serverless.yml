@@ -21,7 +21,15 @@ functions:
   helloWorld:
     worker: hello
     script: helloWorld
+    events:
+      - http:
+          url: example.com/hello/user
+          method: GET
 
   foo:
     worker: foo_script
     script: bar
+    events:
+      - http:
+          url: example.com/foo/bar
+          method: GET
