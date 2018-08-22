@@ -1,13 +1,12 @@
 service:
     name: hello-world
     config:
-      accountId: accid 
-      zoneId: zoneid 
-      scripts:
-        helloworld:
+      accountId: 5ea9ff246c8fd83268943de928d5109a
+      zoneId: 66de06a610e659edd89a6de59df291d2
+      workers:
+        hello:
           routes:
-            - example.com/*
-            - example.com/hi/*
+            - nirvik.me/boo/*
 
 provider:
   name: cloudflare
@@ -17,5 +16,5 @@ plugins:
 
 functions:
   helloWorld:
-    script: helloworld
-    handler: helloWorld
+    worker: hello
+    script: helloWorld  # there must be a file called helloWorld.js
