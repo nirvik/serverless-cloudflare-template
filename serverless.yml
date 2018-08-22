@@ -6,10 +6,10 @@ service:
       scripts:
         hello:
           routes:
-            - '*example.com/hello*'
+            - 'example.com/hello*'
         goodbye:
           routes:
-            - '*example.com/goodbye*'
+            - 'example.com/goodbye*'
 
 
 provider:
@@ -21,8 +21,8 @@ plugins:
 functions:
   helloWorld:
     script: hello
-    handler: helloworld
+    handler: helloWorld
 
-  getBTC:
+  bye:
     script: goodbye
-    handler: goodbyeworld
+    handler: goodByeWorld
